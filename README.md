@@ -22,13 +22,13 @@ source .bashrc
 
 ~~~python
 
-conda install pytorch torchvision torchaudio cudatoolkit -c pytorch
+conda install -y pytorch torchvision torchaudio cudatoolkit -c pytorch
 
 ~~~
 
 ~~~python
 
-conda install pandas scikit-learn matplotlib tqdm seaborn
+conda install -y pandas scikit-learn matplotlib tqdm seaborn
 
 ~~~
 
