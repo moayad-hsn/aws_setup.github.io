@@ -14,6 +14,12 @@ chmod u+x Miniconda3-latest-Linux-x86_64.sh && ./Miniconda3-latest-Linux-x86_64.
 
 ~~~
 
+~~~
+
+source .bashrc
+
+~~~
+
 ~~~python
 
 conda install pytorch torchvision torchaudio cudatoolkit -c pytorch
