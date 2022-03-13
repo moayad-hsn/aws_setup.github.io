@@ -95,3 +95,29 @@ go here
 :8888/lab
 ~~~
 
+# Running Tensorboard on aws and access through localhost
+
+You would have installed tensorboardX and tensorboard
+
+~~~
+
+pip install tensorboard
+
+~~~
+
+~~~
+
+pip install tensorboardX
+
+~~~
+
+Then in a local terminal run 
+
+~~~
+ssh -i '.\Documents\Other docs\Key\Moayad.pem' -NL 6006:localhost:6006 ubuntu@
+~~~
+replace the key file if needed and add the public IP address. Then on a browser navigate to 
+
+~~~
+http://localhost:6006/
+~~~
