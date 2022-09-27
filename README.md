@@ -23,6 +23,10 @@ conda install -y pandas scikit-learn matplotlib tqdm seaborn tensorboard
 ~~~
 
 ~~~python
+pip install wandb
+~~~
+
+~~~python
 conda clean -a
 ~~~
 
@@ -63,7 +67,21 @@ copy the hashed password into the .py file you created above
 ## Getting the lab launched
 
 ~~~
+screen -S Jupyter
+~~~
+
+then 
+
+~~~
 jupyter lab
+~~~
+
+~~~
+ctrl+A
+~~~
+
+~~~
+ctrl+D
 ~~~
 
 go here 
@@ -71,25 +89,40 @@ go here
 :8888/lab
 ~~~
 
-# Running Tensorboard on aws and access through localhost
+# Mounting EBS
 
-You would have installed tensorboardX and tensorboard
-
-~~~
-pip install tensorboard
-~~~
+First let us see the name of the storage:
 
 ~~~
-pip install tensorboardX
+lsblk
 ~~~
 
-Then in a local terminal run 
+We then make our file system
 
 ~~~
-ssh -i '.\Documents\Other docs\Key\Moayad.pem' -NL 6006:localhost:6006 ubuntu@
+sudo mkfs -t xfs /dev/[drive name]
 ~~~
-replace the key file if needed and add the public IP address. Then on a browser navigate to 
+
+We create a dir to mount the drive in
 
 ~~~
-http://localhost:6006/
+mkdir ~/data
+~~~
+
+We mount the drive
+
+~~~
+sudo mount /dev/[drive name] ~/data
+~~~
+
+We change the permission to be able to access the drive
+
+~~~
+cd ~/data
+~~~
+~~~
+sudo chmod go+rw .
+~~~
+~~~
+cd ..
 ~~~
